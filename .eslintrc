@@ -1,6 +1,14 @@
 {
     "extends": "@react-native-community",
     "rules": {
-        "quotes": [2, "double", { "avoidEscape": true }]
+        "quotes": [2, "double", { "avoidEscape": true }],
+        "comma-dangle": ["error", {
+            "arrays": "never",
+            "objects": "never",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }],
+        "no-unused-vars": "off"
     }
 }
