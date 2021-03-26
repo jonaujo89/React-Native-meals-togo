@@ -11,7 +11,7 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
-// const isAndroid = Platform.OS === 'android';
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -29,7 +29,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <AppNavigator />
+        <RestaurantsContextProvider>
+          <AppNavigator />
+        </RestaurantsContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
