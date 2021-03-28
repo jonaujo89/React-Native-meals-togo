@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components/native";
-import { FlatList } from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
@@ -19,7 +19,7 @@ const CenteredSafelView = styled(SafeArea)`
   align-items: center;
 `;
 
-const RestaurantsScreen = () => {
+const RestaurantsScreen = ({ navigation }) => {
   const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
   return (
@@ -34,9 +34,13 @@ const RestaurantsScreen = () => {
         data={restaurants}
         renderItem={({ item }) => {
           return (
-            <Spacer position="bottom" size="large">
-              <RestaurantInfoCard restaurant={item} />
-            </Spacer>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("RestaurantDetail")}
+            >
+              <Spacer position="bottom" size="large">
+                <RestaurantInfoCard restaurant={item} />
+              </Spacer>
+            </TouchableOpacity>
           );
         }}
         keyExtractor={(item, index) => index.toString()}

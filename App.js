@@ -1,6 +1,6 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
-import AppNavigator from "./src/infrastructure/navigation/app.navigator";
+import Navigation from "./src/infrastructure/navigation";
 
 //styling
 import { ThemeProvider } from "styled-components/native";
@@ -32,7 +32,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <LocationContextProvider>
           <RestaurantsContextProvider>
-            <AppNavigator />
+            <Navigation />
           </RestaurantsContextProvider>
         </LocationContextProvider>
       </ThemeProvider>
