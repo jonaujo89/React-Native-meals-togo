@@ -21,7 +21,7 @@ export const locations = {
       }
     ]
   },
-  "san fran": {
+  "san francisco": {
     results: [
       {
         geometry: {
