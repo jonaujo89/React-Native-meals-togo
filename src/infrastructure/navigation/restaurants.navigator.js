@@ -6,6 +6,7 @@ import {
 } from "@react-navigation/stack";
 
 import RestaurantsScreen from "../../features/restaurants/screens/restaurants.screen";
+import RestaurantDetailScreen from "../../features/restaurants/screens/restaurant-detail.screen";
 
 const RestaurantStack = createStackNavigator();
 
@@ -21,7 +22,10 @@ const RestaurantNavigator = () => {
         name="Restaurants"
         component={RestaurantsScreen}
       />
-      <RestaurantStack.Screen name="RestaurantDetail" component={() => null} />
+      <RestaurantStack.Screen
+        name="RestaurantDetail"
+        component={RestaurantDetailScreen}
+      />
     </RestaurantStack.Navigator>
   );
 };
