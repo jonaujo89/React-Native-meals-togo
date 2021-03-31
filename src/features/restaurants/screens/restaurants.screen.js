@@ -6,9 +6,9 @@ import { ActivityIndicator, Colors } from "react-native-paper";
 import RestaurantInfoCard from "../components/restaurant-info-card.component";
 import Spacer from "../../../components/spacer/spacer.component";
 import SafeArea from "../../../components/utils/safe-area.component";
+import Search from "../components/search.component";
 
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import Search from "../components/search.component";
 
 const RestaurantList = styled(FlatList)`
   padding: ${({ theme }) => theme.space[3]};
