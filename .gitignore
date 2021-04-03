@@ -10,6 +10,7 @@ npm-debug.*
 *.orig.*
 web-build/
 boilerplate.md
+firebase-config.js
 
 # macOS
 .DS_Store
