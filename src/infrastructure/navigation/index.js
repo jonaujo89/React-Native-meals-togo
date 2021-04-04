@@ -7,10 +7,10 @@ import AccountNavigator from "./account.navigator";
 import { AuthenticationContext } from "../../services/authentication/authentication.context";
 
 const Navigation = () => {
-  const { isAutnenticated } = useContext(AuthenticationContext);
+  const { isAuthenticated } = useContext(AuthenticationContext);
   return (
     <NavigationContainer>
-      {isAutnenticated ? <AppNavigator /> : <AccountNavigator />}
+      {isAuthenticated ? <AppNavigator /> : <AccountNavigator />}
     </NavigationContainer>
   );
 };
