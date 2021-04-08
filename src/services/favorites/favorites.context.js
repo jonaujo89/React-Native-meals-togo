@@ -18,9 +18,9 @@ export const FavoritesContextProvider = ({ children }) => {
     }
   };
 
-  const loadFavorites = async () => {
+  const loadFavorites = async (uid) => {
     try {
-      const value = await AsyncStorage.getItem("@favorites");
+      const value = await AsyncStorage.getItem(`@favorites-${uid}`);
       if (value !== null) {
         setFavorites(JSON.parse(value));
       }
