@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "rn-meals-togo",
-    "slug": "rn-meals-togo",
+    "name": "FoodToGo",
+    "description": "Look for places to eat",
+    "slug": "food-to-go",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
