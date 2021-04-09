@@ -14,6 +14,12 @@ const ProfileCamera = styled(Camera)`
   flex: 1;
 `;
 
+const InnerSnap = styled.View`
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+`;
+
 const CameraScreen = ({ navigation }) => {
   const { user } = useContext(AuthenticationContext);
   const [hasPermission, setHasPermission] = useState(null);
@@ -42,13 +48,15 @@ const CameraScreen = ({ navigation }) => {
   }
 
   return (
-    <TouchableOpacity onPress={snap}>
-      <ProfileCamera
-        type={Camera.Constants.Type.front}
-        ref={(reference) => (cameraRef.current = reference)}
-        ratio={"16:9"}
-      />
-    </TouchableOpacity>
+    <ProfileCamera
+      type={Camera.Constants.Type.front}
+      ref={(reference) => (cameraRef.current = reference)}
+      ratio={"16:9"}
+    >
+      <TouchableOpacity onPress={snap}>
+        <InnerSnap />
+      </TouchableOpacity>
+    </ProfileCamera>
   );
 };
 

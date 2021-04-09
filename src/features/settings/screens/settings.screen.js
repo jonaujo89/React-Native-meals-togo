@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useCallback, useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import styled from "styled-components/native";
@@ -29,9 +29,11 @@ const SettingsScreen = ({ navigation }) => {
     setPhoto(photoUri);
   };
 
-  useFocusEffect(() => {
-    getProfilePhoto(user);
-  }, [user]);
+  useFocusEffect(
+    useCallback(() => {
+      getProfilePhoto(user);
+    }, [user])
+  );
 
   return (
     <SafeArea>
@@ -39,9 +41,8 @@ const SettingsScreen = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("Camera")}>
           {photo ? (
             <Avatar.Image
-              uri={photo}
+              source={{ uri: photo }}
               size={180}
-              icon="human"
               backgroundColor="#2182bd"
             />
           ) : (
