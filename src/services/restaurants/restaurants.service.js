@@ -2,7 +2,7 @@ import camelize from "camelize";
 
 export const restaurantsRequest = (location) => {
   return fetch(
-    `http://localhost:5001/rn-meals-togo/us-central1/placesNearby?location=${location}`
+    `https://us-central1-rn-meals-togo.cloudfunctions.net/placesNearby?location=${location}`
   )
     .then((response) => {
       // console.log("response rest", response);
