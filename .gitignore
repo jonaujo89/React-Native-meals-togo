@@ -17,4 +17,5 @@ firebase-config.js
 
 */node_modules
 */node_modules/**/*
+*/.runtimeconfig.json
 
