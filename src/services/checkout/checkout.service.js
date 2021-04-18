@@ -5,5 +5,5 @@ const stripe = createStripe(
 );
 
 export const cardTokenRequest = (cardInfo) => {
-  stripe.createToken({ cardInfo });
+  return stripe.createToken({ card: cardInfo });
 };
